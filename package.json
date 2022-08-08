@@ -6,7 +6,8 @@
   "scripts": {
     "build": "postcss tailwind.css -o dist/css/styles.css",
     "watch": "postcss tailwind.css -o dist/css/styles.css --watch"
-  },
+    },
+    
   "keywords": [],
   "author": "",
   "license": "ISC",
