@@ -32,3 +32,19 @@
       y añadimos al index.html <body class="bg-blue-300 debug-screens">
 
       npm run build
+10. Si quiero aplicar estilos comunes para los h1 por ej, lo añado en tailwind.css
+11. Para descargar una fuente de google, google fonts,download family.
+Descargar de static solo las necesarias para evitar peso.
+La añadimos en dist/fonts
+y en tailwind.css
+dentro de @layer base
+@font-face{
+  font-family: Monserrat;
+  src: url(/dist/fonts/Montserrat/Montserrat-ExtraLight.ttf) formal("truetype");
+}
+y en tailwind.config
+en theme, extend añadimos
+fontFamily:{
+  headline:['Montserrat']
+}
+
