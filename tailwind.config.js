@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{html,js}',
-    './components/**/*.{html,js}',
+    //'./pages/**/*.{html,js}',
+    //'./components/**/*.{html,js}',
     './dist/index.html',
-    './tailwindcss/**/*.{html,js}',
+    //'./tailwindcss/**/*.{html,js}',
+    './dist/test_responsive.html'
     
   ],
   theme: {    
@@ -13,15 +14,18 @@ module.exports = {
     },
     extend: {
       fontFamily:{
-        headline:['Montserrat-ExtraLight']
+        headline:['Montserrat-ExtraLight'],
+        rubik:['RubikDistressed-Regular'],
+
       },
       colors:{
         colorDorado:'#ba9120',
-        colorFondo:'#474746'
-      }    
+        colorFondo:'#474746',
+        colorLetra:'#080807',
+      }     
     },
   },
   plugins: [
-    require("tailwindcss-debug-screens"),
+    require("tailwindcss-debug-screens"),  
   ],
 }

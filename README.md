@@ -47,4 +47,8 @@ en theme, extend añadimos
 fontFamily:{
   headline:['Montserrat']
 }
-
+12. Para usar iconos feather icons
+    Elegimos el icono tamaño color etc y luego lo clickamos abrimos el enlace en el
+    navegador y vemos codigo fuente, copiamos el código y lo insertamos en el html y añadimos flex al boton para que lo una.
+    item-center para que quede centrado el icono
+    y w-max para que el fondo vaya relacionado con las letras

@@ -15,7 +15,7 @@
                     <!--text y tamaño(este anula al predefinido), mb -margin botton -->
                     <!--<h1 class="font-serif text-4xl font-bold tracking-tighter uppercase mb-7">Tom Gonzales home training<br>-->
                     <!--font-headline es como definimos la fuente de Google-->
-                        <h1 class="font-headh ">Tom Gonzales home training<br>
+                    <h1 class="font-headh ">Tom Gonzales home training<br>
                         I'll get you in shape!
                     </h1>
                     <h2>Muscle building • Functional training •
@@ -23,7 +23,8 @@
                 </div>
             </section>
             <!-- mt:margin-top , con grid genero columnas, gap separación mínima de columnas-->
-            <section class="grid grid-cols-2 gap-10 mt-12" id="image_services">
+            <section class="grid grid-cols-2 gap-4 mt-12 md:gap-10"
+                id="image_services">
                 <!-- picture -->
                 <div class="ml-auto" id="image">
                     <img src="img/tom.jpg" alt="Tom Gonzales Online Training">
@@ -34,26 +35,43 @@
                     <!-- list-dist añade circulos a la lista, list-inside tabula -->
                     <!-- ml-margin-left de la columna que dividimos el espacio -->
                     <ul class="ml-6 list-disc list-inside">
-                        <li class="mb-2 text-xl" >Lessons via Skype and you can record all sessions
+                        <li>Lessons via Skype and you can record all sessions
                             and watch them again later. </li>
-                        <li class="mb-2 text-xl" >Holistic full body training</li>
-                        <li class="mb-2 text-xl" >Training without equipment</li>
-                        <li class="mb-2 text-xl" >Pain reduction</li>
-                        <li class="mb-2 text-xl" >Tailored nutrition plans</li>
+                        <li>Holistic full body training</li>
+                        <li>Training without equipment</li>
+                        <li>Pain reduction</li>
+                        <li>Tailored nutrition plans</li>
                     </ul>
-                    <!-- Only for >= md -->
-                    <h3 class="mt-10">My qualifications:</h3>
-                    <ul class="ml-6 list-disc list-inside">
-                        <li class="mb-2 text-xl" >Certified nutritionist</li>
-                        <li class="mb-2 text-xl" >Certified fitness trainer</li>
-                        <li class="mb-2 text-xl" >5 years of experience in 1: 1 training</li>
-                    </ul>
+                    <section class="hidden md:block" id="quali_right">
+                        <!-- Only for >= md -->
+                        <h3 class="mt-10 ">My qualifications:</h3>
+                        <ul class="ml-6 list-disc list-inside ">
+                            <li>Certified nutritionist</li>
+                            <li>Certified fitness trainer</li>
+                            <li>5 years of experience in 1: 1 training</li>
+                        </ul>
+                    </section>
+
                 </div>
+            </section>
+
+            <section class="md:hidden" id="quali_bottom">
+                <!-- Only for resolution <=sm / hidden oculto para esas resoluciones -->
+                <h3 class="mt-5 md:mt-10">My qualifications:</h3>
+                <ul class="ml-6 list-disc list-inside">
+                    <!-- leading: es el espaciado entre líneas -->
+                    <li class="leading-5 md:leading-normal">Certified
+                        nutritionist</li>
+                    <li class="leading-5 md:leading-normal">Certified fitness
+                        trainer</li>
+                    <li class="leading-5 md:leading-normal">5 years of
+                        experience in 1: 1 training</li>
+                </ul>
             </section>
 
             <!-- Prices and payment -->
             <section class="mt-8" id="price_payment">
-                <div class="w-8/12 mx-auto">
+                <div class="mx-auto lg:w-8/12">
                     <h2>Prices and payment</h2>
                     <p>My most important goal is that you get ahead with your
                         goals.</p>
@@ -65,21 +83,35 @@
             </section>
 
 
-            <!-- Contact -->
-            <section class="mt-8" id="contact">
-                <div class="grid w-8/12 grid-cols-2 gap-4 mx-auto">
+            <!-- Contact -->            
+            <section class="mt-8 mb-10" id="contact">
+                <!-- flex los pone centrados en dos columnas -->
+                <div class="flex justify-around lg:grid lg:grid-cols-2 lg:gap-4 lg:w-8/12 lg:mx-auto">
                     <div id="email">
                         <p>Your message:</p>
-                        <a href="mailto:almudena85perez@gmail.com">Send an Email</span>
+                        <!--px y py es el padding del boton. hover para cuando te pones encima del botón -->
+                        <a class="flex items-center px-4 py-2 transition rounded-lg shadow-sm focus:ring-2 focus:ring-red-600 w-max font-rubik bg-colorDorado hover:bg-colorFondo hover:shadow-none"
+                            href="mailto:almudena85perez@gmail.com">
+
+                            <svg class="h-4 mr-1"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0
+                                24 24"
+                                fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4">
+                                </circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10
+                                    0 1 0-3.92 7.94"></path></svg>
+
+                            <span>Send an Email</span>
                         </a>
                     </div>
                     <div id="whatsApp_telefon">
                         <p>WhatsApp:</p>
-                       1 222 555 44 33
+                        1 222 555 44 33
                     </div>
                 </div>
             </section>
-
+            
 
         </div>
     </body>
