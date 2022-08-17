@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html x-data="{ dark: false }" :class="dark ? 'dark' : '' " lang="en">
+<!-- Definimos la variable dark en el x data -->
+<!-- En el x-bind le decimos que si dark es true lo igualamos a dark si no a nada -->
+<html x-data="{ dark: true }" x-bind:class="dark ? 'dark' : '' " lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mini Project</title>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     </head>
-    <body class=" bg-colorFondo dark:bg-gray-300 debug-screens">
+    <body class=" bg-colorFondo dark:bg-gray-800 debug-screens">
         <div class="container min-h-screen px-6 py-8 mx-auto bg-gray-300 dark:bg-gray-900">
 
             <!-- page header / headings -->
             <section id="header">
+                <!-- @click, cuando clickamos dark se convierte en el dark opuesto -->
+                <button @click="dark = !dark " class="bg-slate-400 ">Toogle Dark Mode</button>
                 <div class="text-center">
                     <!--text y tamaño(este anula al predefinido), mb -margin botton -->
                     <!--<h1 class="font-serif text-4xl font-bold tracking-tighter uppercase mb-7">Tom Gonzales home training<br>-->
                     <!--font-headline es como definimos la fuente de Google-->
-                    <h1 class="font-headh ">Tom Gonzales home training<br>
-                        I'll get you in shape!
+                    <h1 class="leading-snug ">Tom Gonzales home training<br>
+                        <span class="mt-3 text-4xl italic text-indigo-900 sm:text-5xl lg:text-7xl opacity-80 dark:text-colorDorado">
+                            <q>&nbsp;I'll get you in shape!&nbsp;</q>
+                            </span>                            
                     </h1>
-                    <h2>Muscle building • Functional training •
+                    <h2 class="mt-2"> Muscle building • Functional training •
                         Nutritional advice</h2>
                 </div>
             </section>
             <!-- mt:margin-top , con grid genero columnas, gap separación mínima de columnas-->
-            <section class="grid grid-cols-2 gap-4 mt-12 md:gap-10"
+            <!-- mx:auto, mantiene centrado y w es el ancho que le queremos dar a la columna-->
+            <section class="grid grid-cols-2 gap-4 mt-12 md:gap-10 lg:w-3/4 xl:w-9/12 lg:mx-auto"
                 id="image_services">
                 <!-- picture -->
                 <div class="ml-auto" id="image">
@@ -35,7 +45,8 @@
                     <!-- list-dist añade circulos a la lista, list-inside tabula -->
                     <!-- ml-margin-left de la columna que dividimos el espacio -->
                     <ul class="ml-6 list-disc list-inside">
-                        <li>Lessons via Skype and you can record all sessions
+                        <li class="text-justify">Lessons via Skype and you can
+                            record all sessions
                             and watch them again later. </li>
                         <li>Holistic full body training</li>
                         <li>Training without equipment</li>
@@ -71,11 +82,11 @@
 
             <!-- Prices and payment -->
             <section class="mt-8" id="price_payment">
-                <div class="mx-auto lg:w-8/12">
+                <div class="mx-auto lg:w-8/12 2xl:w-3/6">
                     <h2>Prices and payment</h2>
                     <p>My most important goal is that you get ahead with your
                         goals.</p>
-                    <p>In a free opening session we will
+                    <p class="text-justify ">In a free opening session we will
                         discuss what you want to achieve and how much you can or
                         want to spend. Then we are guaranteed to find a solution
                         that suits you.</p>
@@ -83,15 +94,15 @@
             </section>
 
 
-            <!-- Contact -->            
+            <!-- Contact -->
             <section class="mt-8 mb-10" id="contact">
-                <!-- flex los pone centrados en dos columnas -->
-                <div class="flex justify-around lg:grid lg:grid-cols-2 lg:gap-4 lg:w-8/12 lg:mx-auto">
+                <!-- flex los pone centrados en dos columnas, la otra opción es  lg:grid lg:grid-cols-2 lg:gap-4, pero no están centrados -->
+                <div class="flex justify-around lg:w-8/12 lg:mx-auto">
                     <div id="email">
                         <p>Your message:</p>
                         <!--px y py es el padding del boton. hover para cuando te pones encima del botón -->
-                        <a class="flex items-center px-4 py-2 transition rounded-lg shadow-sm focus:ring-2 focus:ring-red-600 w-max font-rubik bg-colorDorado hover:bg-colorFondo hover:shadow-none"
-                            href="mailto:almudena85perez@gmail.com">
+                        <a class="flex items-center px-4 py-2 transition rounded-lg shadow-sm focus:ring-2 focus:ring-red-600 w-max font-montneg bg-colorDorado hover:dark:bg-gray-400 hover:bg-colorFondo dark:bg-colorFondo dark:text-gray-200 hover:dark:text-colorFondo hover:shadow-none"
+                            href="mailto:almudena85perez@gmail.com" >
 
                             <svg class="h-4 mr-1"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0
@@ -102,17 +113,21 @@
                                 </circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10
                                     0 1 0-3.92 7.94"></path></svg>
 
-                            <span>Send an Email</span>
+                            <span class="text-lg">Send an Email</span>
                         </a>
                     </div>
                     <div id="whatsApp_telefon">
                         <p>WhatsApp:</p>
-                        1 222 555 44 33
+                        <!-- Color real whatsApp  #25d366-->
+                        <span class="text-lg dark:text-white"><i class="fa fa-whatsapp"
+                                style="font-size:30px;color:#ba9120" ></i> 622
+                            555 443</span>
                     </div>
+
                 </div>
             </section>
-            
 
+          
         </div>
     </body>
 </html>

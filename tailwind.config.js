@@ -1,12 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', //or media depende de el modo que tengas en Windows
   content: [
-    //'./pages/**/*.{html,js}',
-    //'./components/**/*.{html,js}',
     './dist/index.html',
     //'./tailwindcss/**/*.{html,js}',
-    './dist/test_responsive.html'
-    
+    './dist/test_responsive.html',    
   ],
   theme: {    
     debugScreens: {
@@ -15,6 +13,8 @@ module.exports = {
     extend: {
       fontFamily:{
         headline:['Montserrat-ExtraLight'],
+        montneg:['Montserrat-Negrita'],
+        montnegruesa:['Montserrat-Medium'],
         rubik:['RubikDistressed-Regular'],
 
       },

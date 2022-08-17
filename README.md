@@ -52,3 +52,23 @@ fontFamily:{
     navegador y vemos codigo fuente, copiamos el código y lo insertamos en el html y añadimos flex al boton para que lo una.
     item-center para que quede centrado el icono
     y w-max para que el fondo vaya relacionado con las letras
+13. Fondo HeroPatterns
+    Copio el código que aparece y añado en tailwind.css
+    body { codigo }
+14. Configurar Alpinejs
+    Google github alpinejs
+    Seguir su instalación en https://github.com/alpinejs/alpine/blob/v2.8.2/README.es.md , ponemos en el head el script
+    Descargamos en VSC la aplicación Alpine.js IntelliSense
+    Esto nos permite generar variables por ejemplo
+    <section x-data="{ word: 'Hello' }" id="header">
+    Que las podemos usar posteriormente como en este caso.
+    <h2 class="mt-2">Word: <span x-text="word"></span>  Muscle building • Functional training •
+                        Nutritional advice</h2>
+    Generando un resultado en la web
+    Word: Hello Muscle building • Functional training • Nutritional advice
+    La variable solo aparecerá en la section que está definida.
+
+    <!-- Definimos la variable dark en el x data -->
+    <!-- En el x-bind le decimos que si dark es true lo igualamos a dark si no a nada -->
+    <html x-data="{ dark: false }" x-bind:class="dark ? 'dark' : '' " lang="es">
+
