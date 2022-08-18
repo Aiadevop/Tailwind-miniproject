@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Definimos la variable dark en el x data -->
-<!-- En el x-bind le decimos que si dark es true lo igualamos a dark si no a nada -->
-<html x-data="{ dark: true }" x-bind:class="dark ? 'dark' : '' " lang="es">
+<!-- En el x-bind le decimos que si dark es true lo igualamos a dark si no a nada . Se puede eliminar x-bind-->
+<html x-data="{ dark: false }" x-bind:class="dark ? 'dark' : '' " lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +14,23 @@
     <body class=" bg-colorFondo dark:bg-gray-800 debug-screens">
         <div class="container min-h-screen px-6 py-8 mx-auto bg-gray-300 dark:bg-gray-900">
 
-            <!-- page header / headings -->
+            <!-- Page header / headings -->
             <section id="header">
                 <!-- @click, cuando clickamos dark se convierte en el dark opuesto -->
-                <button @click="dark = !dark " class="bg-slate-400 ">Toogle Dark Mode</button>
+                
+                <button @click="dark = !dark " style="float:right" class=" btn btn-icon btn-dark"
+                >
+                <!--light sun -->
+                <svg x-show="dark" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-colorDorado " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <!--dark moon -->
+                <!--x-show , se muestra cuando el modo no está en dark -->
+                <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                </svg>Dark/Light
+                
+                </button>
                 <div class="text-center">
                     <!--text y tamaño(este anula al predefinido), mb -margin botton -->
                     <!--<h1 class="font-serif text-4xl font-bold tracking-tighter uppercase mb-7">Tom Gonzales home training<br>-->
@@ -31,8 +44,11 @@
                         Nutritional advice</h2>
                 </div>
             </section>
+            
             <!-- mt:margin-top , con grid genero columnas, gap separación mínima de columnas-->
             <!-- mx:auto, mantiene centrado y w es el ancho que le queremos dar a la columna-->
+
+            <!-- Offer you and qualifications -->
             <section class="grid grid-cols-2 gap-4 mt-12 md:gap-10 lg:w-3/4 xl:w-9/12 lg:mx-auto"
                 id="image_services">
                 <!-- picture -->
@@ -66,6 +82,7 @@
                 </div>
             </section>
 
+            <!-- Qualifications responsive-->
             <section class="md:hidden" id="quali_bottom">
                 <!-- Only for resolution <=sm / hidden oculto para esas resoluciones -->
                 <h3 class="mt-5 md:mt-10">My qualifications:</h3>
@@ -101,8 +118,8 @@
                     <div id="email">
                         <p>Your message:</p>
                         <!--px y py es el padding del boton. hover para cuando te pones encima del botón -->
-                        <a class="flex items-center px-4 py-2 transition rounded-lg shadow-sm focus:ring-2 focus:ring-red-600 w-max font-montneg bg-colorDorado hover:dark:bg-gray-400 hover:bg-colorFondo dark:bg-colorFondo dark:text-gray-200 hover:dark:text-colorFondo hover:shadow-none"
-                            href="mailto:almudena85perez@gmail.com" >
+                        
+                        <a class="btn btn-icon btn-dorado" href="mailto:almudena85perez@gmail.com" >
 
                             <svg class="h-4 mr-1"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0
@@ -114,7 +131,7 @@
                                     0 1 0-3.92 7.94"></path></svg>
 
                             <span class="text-lg">Send an Email</span>
-                        </a>
+                            </a>
                     </div>
                     <div id="whatsApp_telefon">
                         <p>WhatsApp:</p>

@@ -72,3 +72,11 @@ fontFamily:{
     <!-- En el x-bind le decimos que si dark es true lo igualamos a dark si no a nada -->
     <html x-data="{ dark: false }" x-bind:class="dark ? 'dark' : '' " lang="es">
 
+  15. Previously used directives in Alpine.js
+        ● x-data > to define variables
+        ● x-bind, or short form “:” > to make attributes dynamic, e.g. the classes
+        ● @click > to change variables with a click
+        ● x-show > to show or hide elements dynamically
+        ● x-text > to change text dynamically
+        
+
